@@ -593,7 +593,6 @@
     </main>
     <!-- Main layout -->
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -716,9 +715,13 @@
         var config = {
             type: 'line',
             data: {
-                labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+                labels: ['JAN', '', '', '', 'FEB', '', '', '', 'MAR', '', '', '', 'APR', '', '', '',
+                    'MAY', '', '', '', 'JUN', '', '', '', 'JUL', '', '', '', 'AUG', '', '', '',
+                    'SEP', '', '', '', 'OCT', '', '', '', 'NOV', '', '', '', 'DEC', '', '', ''],
                 datasets: [{
-                    data: [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100],
+                    data: [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100, 50, 87, 41, 60, 45, 69,
+                        99, 102, 56, 78, 80, 43, 56, 70, 55, 65, 67, 70, 50, 45, 43, 40, 45, 56, 70, 60,
+                        40, 54, 60, 50, 40, 60, 56, 40, 43, 44],
                     backgroundColor: gradientFill,
                     borderColor: [
                         '#1d8cf8',
@@ -779,7 +782,7 @@
 
 
 
-        // This code here will need to inport the actual data that we got from the algorithm.
+        // This code here will need to import the actual data that we got from the algorithm.
         document.getElementById('fetch').addEventListener('click', function () {
             config.data.datasets.forEach(function (dataset) {
                 dataset.data = dataset.data.map(function () {
@@ -787,7 +790,6 @@
                 });
 
             });
-
             window.myLine.update();
         });
 
